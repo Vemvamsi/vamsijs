@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+
+<!-- obects:groups or to use the multiple
+ values together it make us code more organized -->
+
+
+    <script>
+        const product = {
+            name:'Dairy',
+            price:100
+        };
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        // adding new property to the object
+
+        product.company='lynk';
+        console.log(product);
+
+        // deleting the property 
+
+        delete product.price;
+        console.log(product);
+
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time':'1 day',//nested objects
+            ratings: {
+                stars: 4.5,
+                count:234
+            },
+            fun: function function1(){
+                console.log('nested');
+            },
+        };
+console.log(product2);
+console.log(product2.name);
+console.log(product2['name']);
+console.log(product2['delivery-time'])
+
+console.log(product2.ratings.count)
+product2.fun();
+//we use bracket notation  beacuse ot notation will give  error
+
+//json and local storage are the built in functions of js
+//json-javascirpt object notation
+//json dosent allow functions 
+
+//this is js to json
+console.log(JSON.stringify(product2));
+
+//json to js
+const jsonString =JSON.stringify(product2);
+console.log(JSON.parse(jsonString));
+
+//localstorage stores the values permanently
+//even if we refresh the data stores permanantly
+
+
+console.log('hello'.length);
+console.log('hello'.toUpperCase());
+//auto boxing dosent works on null values
+
+const object1= {
+    message: 'hello'
+};
+
+//object by reference
+const object2 = object1;
+
+object1.message = 'Good job!';
+console.log(object1);
+//object1 changes object 2 will also changed 
+
+console.log(object2);
+
+console.log(object1 === object2);
+const object3 = {
+    chat: 'hello'
+    ,cost:200
+};
+
+const {chat,cost} = object3;//destructing
+
+console.log(chat);
+console.log(cost);
+
+const object5 = {
+
+method: function function1(){
+    console.log('method');
+},
+method() { //short hand method 
+    console.log('vamsi');
+}
+   ,
+};
+object5.method();
+
+
+ </script>
+</body>
+</html>

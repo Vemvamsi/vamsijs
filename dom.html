@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>
+        Hello
+    </button>
+    <button class="js-button">
+        2nd button
+    </button>
+    <script>
+        document.body.innerHTML = 'Hello';
+        /* 
+        document is a built in function 
+        document.body.innerHtML is used to modify the text in HTML c
+        code
+        */
+       document.title = 'Good job JS';
+       /*
+       to change the title*/
+       console.log(document.body.innerHTML);
+       document.body.innerHTML='<button>good job</button>';
+       //document.queryselector() to get any element form the page and ut it in js
+
+      console.log(document.querySelector('button').innerHTML);
+//it is an object 
+document.querySelector('button').innerHTML='vamsi';
+const buttonElement= document.querySelector('.js-button');
+//. looks for the class in query selector 
+console.log(buttonElement);
+
+    </script>
+</body>
+</html>

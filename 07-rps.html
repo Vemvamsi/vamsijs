@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-paper-scissor</title>
+</head>
+<body>
+    <p>Rock paper scissor</p>
+    <button onclick="
+    pickComputerMove();
+    let result='';
+    if(computerMove === 'Rock'){
+        result = 'Tie';
+    } else if (computerMove === 'Paper'){
+        result = 'You loose';
+    } else if(computerMove === 'scissor') {
+        result = 'You Win';
+    }
+    alert(`You picked Rock computer picked ${computerMove} so ${result}`);
+    ">Rock</button>
+    
+    
+    <button onclick="
+        pickComputerMove1();
+        let result1='';
+        if(computerMove1 === 'Rock'){
+            result1 = 'You Win';
+        } else if (computerMove1 === 'Paper'){
+            result1 = 'Tie';
+        } else if(computerMove1 === 'scissor') {
+            result1 = 'You Loose';
+        }
+        alert(`You picked Paper computer picked ${computerMove1} so ${result1}`);
+    ">Paper</button>
+
+    <button onclick="
+    pickComputerMove2();
+    let result2 ='';
+    if(computerMove2 === 'Rock'){
+        result2= 'You Loose';
+    } else if (computerMove2 === 'Paper'){
+        result = 'You Win';
+    } else if(computerMove2 === 'scissor') {
+        result2 = 'Tie';
+    }
+    alert(`You picked scissor computer picked ${computerMove2} so ${result2}`);
+    ">scissor</button>
+
+    <script>
+         let computerMove = '';
+        function pickComputerMove() {
+            const randomNumber = Math.random();
+    if(randomNumber >= 0 &&   randomNumber < 1 / 3 ) {
+        computerMove ='Rock';
+    } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+        computerMove = 'Paper';
+    } else if (randomNumber > 2 / 3 && randomNumber < 1 ){
+        computerMove ='scissor';
+    }
+        }
+    let computerMove1 = '';
+    function pickComputerMove1(){
+        const randomNumber1 = Math.random();
+    if(randomNumber1 >= 0 &&   randomNumber1 < 1 / 3 ) {
+        computerMove ='Rock';
+    } else if (randomNumber1 >= 1 / 3 && randomNumber1 < 2 / 3) {
+        computerMove = 'Paper';
+    } else if (randomNumber1 > 2 / 3 && randomNumber1 < 1 ){
+        computerMove1 ='scissor';
+    }
+    }
+    let computerMove2 = '';
+    function pickComputerMove2() {
+        const randomNumber2 = Math.random();
+    if(randomNumber2 >= 0 &&  randomNumber2 < 1 / 3 ) {
+        computerMove2 ='Rock';
+    } else if (randomNumber2 >= 1 /  3 && randomNumber2 < 2 / 3) {
+        computerMove2 = 'Paper';
+    } else if (randomNumber2 > 2 / 3 && randomNumber2 < 1 ){
+        computerMove2 ='scissor';
+    }
+    }
+    </script>
+</body> 
+</html>
