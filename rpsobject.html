@@ -20,6 +20,8 @@ playGame('Rock')
     playGame('scissor')
     ">scissor</button>
 
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
     <p class="js-score"> </p>
 
 <button onclick="
@@ -32,14 +34,12 @@ updateScoreElement();
 Reset score
 </button>
     <script>
-        const score = JSON.parse(localStorage.getItem('score'));
-        if(score === null) {
-            score = {
-                wins: 0,
-                losses: 0,
-                ties:0
-            };
-        }
+        let score = JSON.parse(localStorage.getItem('score')) ||{
+            wins: 0,
+            losses :0,
+            ties :0
+        };
+
 
 updateScoreElement();
 
@@ -73,7 +73,7 @@ updateScoreElement();
             }  
             }
             if(result === 'You Win') {
-                
+
 
                 score.wins += 1;
             } else if(result === 'You Loose'){
@@ -83,18 +83,22 @@ updateScoreElement();
             }
     localStorage.setItem('score',JSON.stringify(score));
 //local storage only supports strings
-
+        
+        document.querySelector('.js-result').innerHTML
+        =result;
+        document.querySelector('.js-moves').innerHTML
+        =`You ${PlayerMove} - Computer ${computerMove}`;
 
         updateScoreElement();
 
-alert(`You picked ${PlayerMove} computer picked ${computerMove} so ${result}
-wins: ${score.wins} , losses: ${score.losses}, Ties: ${score.ties}`);
+
     }
-    
+
     function updateScoreElement(){
         document.querySelector('.js-score').innerHTML = 
 `wins: ${score.wins} , losses: ${score.losses}, Ties: ${score.ties}`;
     }
+    
         function pickComputerMove(){
             const randomNumber = Math.random();
         let computerMove = '';
